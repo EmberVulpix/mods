@@ -104,12 +104,19 @@ public class Main {
                         .methodName("k")
                         .paramTypeNames("boolean")
                         .insertBefore("System.out.println(this._cfgmgr.gN() + this._name + ($1 ? \".xml\" : \".dat\"));\n"))
-                .modifyMethod(new MethodModifier()
+                /*.modifyMethod(new MethodModifier()
                         .methodName("i")
                         .paramTypeNames("boolean")
                         .insertBefore("" +
                                 "if (\"config/item.dat\".equals(this.k($1))) {\n" +
                                 "    return this.getClass().getClassLoader().getResourceAsStream(\"rsrc/config/item.dat\");\n" +
+                                "}"))*/
+                .modifyMethod(new MethodModifier()
+                        .methodName("i")
+                        .paramTypeNames("boolean")
+                        .insertBefore("" +
+                                "if (\"config/item.xml\".equals(this.k($1))) {\n" +
+                                "    return this.getClass().getClassLoader().getResourceAsStream(\"rsrc/config/item.xml\");\n" +
                                 "}"));
     }
 
