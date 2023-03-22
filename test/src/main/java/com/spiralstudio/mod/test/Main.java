@@ -87,11 +87,30 @@ public class Main {
         ClassPool.from("com.threerings.util.O")
                 .modifyMethod(new MethodModifier()
                         .methodName("dJ")
-                        .insertBefore("System.out.println($1);\n" +
+                        .insertBefore("" +
                                 "if (\"rsrc.i18n.item\".equals($1)) {\n" +
                                 "    $1 = \"rsrc.i18n.itemx\";\n" +
+                                "} else if (\"rsrc.i18n.item-names\".equals($1)) {\n" +
+                                "    $1 = \"rsrc.i18n.itemx-names\";\n" +
                                 "}"));
 
+/*        ClassPool.from("com.threerings.config.ConfigManager")
+                .modifyMethod(new MethodModifier()
+                        .methodName("at")
+                        .insertBefore("System.out.println($1);\n"));*/
+
+        ClassPool.from("com.threerings.config.ConfigGroup")
+                .modifyMethod(new MethodModifier()
+                        .methodName("k")
+                        .paramTypeNames("boolean")
+                        .insertBefore("System.out.println(this._cfgmgr.gN() + this._name + ($1 ? \".xml\" : \".dat\"));\n"))
+                .modifyMethod(new MethodModifier()
+                        .methodName("i")
+                        .paramTypeNames("boolean")
+                        .insertBefore("" +
+                                "if (\"config/item.dat\".equals(this.k($1))) {\n" +
+                                "    return this.getClass().getClassLoader().getResourceAsStream(\"rsrc/config/item.dat\");\n" +
+                                "}"));
     }
 
     static void test2() {
