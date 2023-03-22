@@ -84,6 +84,17 @@ public class Main {
     }
 
     static void test() {
+        ClassPool.from("com.threerings.util.O")
+                .modifyMethod(new MethodModifier()
+                        .methodName("dJ")
+                        .insertBefore("System.out.println($1);\n" +
+                                "if (\"rsrc.i18n.item\".equals($1)) {\n" +
+                                "    $1 = \"rsrc.i18n.itemx\";\n" +
+                                "}"));
+
+    }
+
+    static void test2() {
         ClassPool.from("com.threerings.projectx.item.config.ItemConfig$Weapon")
                 .modifyMethod(new MethodModifier()
                         .methodName("a")
