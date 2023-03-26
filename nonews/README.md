@@ -1,0 +1,3 @@
+# NoNews
+
+Hide news.

@@ -46,6 +46,7 @@
         <module>camera</module>
         <module>autoadvance</module>
         <module>noloading</module>
+        <module>nonews</module>
         <module>lootfilter</module>
         <module>gearex</module>
         <module>uienhancer</module>

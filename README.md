@@ -17,6 +17,7 @@ All mods need to be loaded using [projectx-hazard](https://github.com/spiralstud
 - [Camera](camera) allows you moving and rotating the camera.
 - [AutoAdvance](autoadvance) automatically clicks the "Advance Now" button, removes "Prize Wheel" animations.
 - [NoLoading](noloading) hides loading screen.
+- [NoNews](nonews) hides news.
 - [LootFilter](lootfilter) hides loot messages and pickup sprites.
 
 ## License
