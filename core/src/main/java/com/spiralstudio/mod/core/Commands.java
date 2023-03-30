@@ -21,36 +21,38 @@ import java.util.stream.Collectors;
  * @see com.threerings.crowd.chat.client.a.c CommandHandler
  */
 public final class Commands {
-    private static final Map<String, String> fields = new LinkedHashMap<>();
+    private static final Map<String, FieldBuilder> fields = new LinkedHashMap<>();
     private static final Map<String, String> commands = new LinkedHashMap<>();
 
     /**
      * Adds a custom field to {@code ChatDirector}, which can be accessed through {@code this}.
      *
-     * @param fieldName the name of the field to be added.
-     * @param fieldType the type of the field to be added.
+     * @param name the name of the field to be added.
+     * @param type the type of the field to be added.
      */
-    public static void addField(String fieldName, String fieldType) {
-        fields.put(fieldName, fieldType);
+    public static void addField(String name, String type) {
+        fields.put(name, new FieldBuilder().fieldName(name).typeName(type).modifiers(Modifier.PUBLIC | Modifier.TRANSIENT));
     }
 
     /**
-     * Adds custom fields to {@code ChatDirector}, which can be accessed through {@code this}.
+     * Adds a custom field to {@code ChatDirector}, which can be accessed through {@code this}.
      *
-     * @param map the fields to be added.
+     * @param name      the name of the field to be added.
+     * @param type      the type of the field to be added.
+     * @param modifiers the modifiers of the field to be added.
      */
-    public static void addFields(Map<String, String> map) {
-        fields.putAll(map);
+    public static void addField(String name, String type, int modifiers) {
+        fields.put(name, new FieldBuilder().fieldName(name).typeName(type).modifiers(modifiers));
     }
 
     /**
      * Adds a custom command to {@code ChatDirector#requestChat}.
      *
-     * @param commandName the name of the command to be added.
-     * @param commandBody the body of the command to be added.
+     * @param name the name of the command to be added.
+     * @param body the body of the command to be added.
      */
-    public static void addCommand(String commandName, String commandBody) {
-        commands.put(commandName, commandBody);
+    public static void addCommand(String name, String body) {
+        commands.put(name, body);
     }
 
     /**
@@ -74,10 +76,7 @@ public final class Commands {
                 // Add custom fields
                 .addFields(fields.entrySet()
                         .stream()
-                        .map(e -> new FieldBuilder()
-                                .fieldName(e.getKey())
-                                .typeName(e.getValue())
-                                .modifiers(Modifier.PUBLIC | Modifier.TRANSIENT))
+                        .map(Map.Entry::getValue)
                         .collect(Collectors.toList()))
                 // Add custom commands, override method `com.threerings.crowd.chat.client.ChatDirector.requestChat`
                 .modifyMethod(new MethodModifier()
