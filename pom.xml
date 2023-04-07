@@ -51,7 +51,6 @@
         <module>gearex</module>
         <module>uienhancer</module>
         <module>tweaks</module>
-        <!--<module>kozmabot</module>-->
         <module>test</module>
     </modules>
 
