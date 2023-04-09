@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mods="autoadvance camera core lootfilter noloading nonews pandora pocketshop showping stayonline teleport"
+mods="autoadvance camera core gearex lootfilter noloading nonews pandora pocketshop showping stayonline teleport tweaks"
 
 mkdir -p ./target/code-mods/
 chmod -R 777 ./target/code-mods/
