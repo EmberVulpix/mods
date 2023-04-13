@@ -2,10 +2,10 @@ package com.spiralstudio.mod.uienhancer;
 
 import com.spiralstudio.mod.core.ClassPool;
 import com.spiralstudio.mod.core.Commands;
+import com.spiralstudio.mod.core.ConstructorModifier;
+import com.spiralstudio.mod.core.MethodBuilder;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
-import com.spiralstudio.mod.core.util.ConstructorModifier;
-import com.spiralstudio.mod.core.util.MethodBuilder;
-import com.spiralstudio.mod.core.util.MethodModifier;
 
 /**
  * TODO

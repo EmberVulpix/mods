@@ -3,10 +3,10 @@ package com.spiralstudio.mod.autoadvance;
 import com.spiralstudio.mod.core.ClassPool;
 import com.spiralstudio.mod.core.Commands;
 import com.spiralstudio.mod.core.Configs;
+import com.spiralstudio.mod.core.ConstructorModifier;
+import com.spiralstudio.mod.core.FieldBuilder;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
-import com.spiralstudio.mod.core.util.ConstructorModifier;
-import com.spiralstudio.mod.core.util.FieldBuilder;
-import com.spiralstudio.mod.core.util.MethodModifier;
 
 import java.lang.reflect.Modifier;
 
@@ -80,7 +80,7 @@ public class Main {
 
     static boolean enableAutoAdv() {
         try {
-            Config config = Configs.read("autoadvance", Config.class);
+            Config config = Configs.readYaml("autoadvance.yml", Config.class);
             return config != null && config.getAutoadv() != null && config.getAutoadv().isEnabled();
         } catch (Exception e) {
             System.out.println("Failed to read config: " + e.getMessage());

@@ -1,8 +1,8 @@
 package com.spiralstudio.mod.noloading;
 
 import com.spiralstudio.mod.core.ClassPool;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
-import com.spiralstudio.mod.core.util.MethodModifier;
 
 /**
  * @author Leego Yih

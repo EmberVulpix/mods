@@ -1,8 +1,8 @@
 package com.spiralstudio.mod.stayonline;
 
 import com.spiralstudio.mod.core.ClassPool;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
-import com.spiralstudio.mod.core.util.MethodModifier;
 
 /**
  * Overrides the `start` method of the class `IdleTracker` to disable it.

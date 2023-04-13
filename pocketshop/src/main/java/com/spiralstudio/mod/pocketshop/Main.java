@@ -2,8 +2,8 @@ package com.spiralstudio.mod.pocketshop;
 
 import com.spiralstudio.mod.core.ClassPool;
 import com.spiralstudio.mod.core.Commands;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
-import com.spiralstudio.mod.core.util.MethodModifier;
 
 /**
  * Enter commands to call shops anytime and anywhere.

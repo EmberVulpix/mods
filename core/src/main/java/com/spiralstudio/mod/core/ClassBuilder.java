@@ -1,4 +1,4 @@
-package com.spiralstudio.mod.core.util;
+package com.spiralstudio.mod.core;
 
 import javassist.CannotCompileException;
 import javassist.ClassPool;
@@ -24,6 +24,7 @@ public class ClassBuilder {
     private List<String> interfaceClassNames;
     private List<ConstructorBuilder> constructorBuilders;
     private List<ConstructorModifier> constructorModifiers;
+    private StaticConstructorBuilder staticConstructor;
     private List<FieldBuilder> fieldBuilders;
     private List<FieldModifier> fieldModifiers;
     private List<MethodBuilder> methodBuilders;
@@ -107,6 +108,11 @@ public class ClassBuilder {
             constructorModifiers = new ArrayList<>();
         }
         constructorModifiers.addAll(modifiers);
+        return this;
+    }
+
+    public ClassBuilder staticConstructor(StaticConstructorBuilder builder) {
+        staticConstructor = builder;
         return this;
     }
 
@@ -234,6 +240,9 @@ public class ClassBuilder {
             for (MethodModifier mm : methodModifiers) {
                 mm.declaring(ctClass).build(classPool);
             }
+        }
+        if (staticConstructor != null) {
+            staticConstructor.declaring(ctClass).build(classPool);
         }
         clazz = ctClass.toClass();
         ctClass.detach();

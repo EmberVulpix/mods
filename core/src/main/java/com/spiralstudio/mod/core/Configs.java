@@ -14,8 +14,8 @@ import java.util.Map;
 public final class Configs {
     private static final String DIR = System.getProperty("user.dir");
 
-    public static <T> T read(String name, Class<T> clazz) throws IOException {
-        File file = getConfigFile(name);
+    public static <T> T readYaml(String filename, Class<T> clazz) throws IOException {
+        File file = getConfigFile(filename);
         if (file == null) {
             return null;
         }
@@ -25,8 +25,8 @@ public final class Configs {
         }
     }
 
-    public static <K, V> Map<K, V> readAsMap(String name) throws IOException {
-        File file = getConfigFile(name);
+    public static <K, V> Map<K, V> readYaml(String filename) throws IOException {
+        File file = getConfigFile(filename);
         if (file == null) {
             return null;
         }
@@ -36,10 +36,10 @@ public final class Configs {
         }
     }
 
-    public static File getConfigFile(String name) {
-        File file = new File(DIR + "/code-mods/" + name + ".yml");
+    public static File getConfigFile(String filename) {
+        File file = new File(DIR + "/code-mods/" + filename);
         if (!file.exists()) {
-            file = new File(DIR + "/" + name + ".yml");
+            file = new File(DIR + "/" + filename);
         }
         return file.exists() ? file : null;
     }

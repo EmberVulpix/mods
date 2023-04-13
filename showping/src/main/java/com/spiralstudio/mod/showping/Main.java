@@ -1,8 +1,8 @@
 package com.spiralstudio.mod.showping;
 
 import com.spiralstudio.mod.core.ClassPool;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
-import com.spiralstudio.mod.core.util.MethodModifier;
 
 /**
  * Overrides the `notePing` method of the class `Minimap` to show ping value.

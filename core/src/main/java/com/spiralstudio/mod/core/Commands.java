@@ -1,8 +1,5 @@
 package com.spiralstudio.mod.core;
 
-import com.spiralstudio.mod.core.util.FieldBuilder;
-import com.spiralstudio.mod.core.util.MethodModifier;
-
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -70,7 +67,7 @@ public final class Commands {
             return;
         }
         // Read custom configuration
-        Config config = Configs.read("cmd", Config.class);
+        Config config = Configs.readYaml("cmd.yml", Config.class);
         // Override class `com.threerings.crowd.chat.client.ChatDirector`
         ClassPool.from("com.threerings.crowd.chat.client.a")
                 // Add custom fields

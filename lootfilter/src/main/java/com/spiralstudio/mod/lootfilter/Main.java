@@ -2,10 +2,10 @@ package com.spiralstudio.mod.lootfilter;
 
 import com.spiralstudio.mod.core.ClassPool;
 import com.spiralstudio.mod.core.Configs;
+import com.spiralstudio.mod.core.FieldBuilder;
+import com.spiralstudio.mod.core.MethodBuilder;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
-import com.spiralstudio.mod.core.util.FieldBuilder;
-import com.spiralstudio.mod.core.util.MethodBuilder;
-import com.spiralstudio.mod.core.util.MethodModifier;
 
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -30,7 +30,7 @@ public class Main {
             return;
         }
         mounted = true;
-        Config config = Configs.read("lootfilter", Config.class);
+        Config config = Configs.readYaml("lootfilter.yml", Config.class);
         boolean added = addLootFilterClass(config);
         if (!added) {
             return;

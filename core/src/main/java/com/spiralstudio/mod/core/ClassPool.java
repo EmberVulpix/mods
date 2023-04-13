@@ -1,7 +1,5 @@
 package com.spiralstudio.mod.core;
 
-import com.spiralstudio.mod.core.util.ClassBuilder;
-
 import java.util.LinkedHashMap;
 import java.util.Map;
 

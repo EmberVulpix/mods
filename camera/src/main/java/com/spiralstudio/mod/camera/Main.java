@@ -2,11 +2,11 @@ package com.spiralstudio.mod.camera;
 
 import com.spiralstudio.mod.core.ClassPool;
 import com.spiralstudio.mod.core.Commands;
+import com.spiralstudio.mod.core.ConstructorBuilder;
+import com.spiralstudio.mod.core.FieldBuilder;
+import com.spiralstudio.mod.core.MethodBuilder;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
-import com.spiralstudio.mod.core.util.ConstructorBuilder;
-import com.spiralstudio.mod.core.util.FieldBuilder;
-import com.spiralstudio.mod.core.util.MethodBuilder;
-import com.spiralstudio.mod.core.util.MethodModifier;
 
 import java.lang.reflect.Modifier;
 import java.util.Arrays;

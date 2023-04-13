@@ -1,4 +1,4 @@
-package com.spiralstudio.mod.core.util;
+package com.spiralstudio.mod.core;
 
 import javassist.CannotCompileException;
 import javassist.ClassPool;

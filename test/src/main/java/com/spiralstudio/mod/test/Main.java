@@ -1,9 +1,9 @@
 package com.spiralstudio.mod.test;
 
 import com.spiralstudio.mod.core.ClassPool;
+import com.spiralstudio.mod.core.ConstructorModifier;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
-import com.spiralstudio.mod.core.util.ConstructorModifier;
-import com.spiralstudio.mod.core.util.MethodModifier;
 
 /**
  * @author Leego Yih
