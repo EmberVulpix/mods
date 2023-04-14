@@ -1,5 +1,7 @@
 package com.spiralstudio.mod.core;
 
+import lombok.Data;
+
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -146,25 +148,10 @@ public final class Commands {
         body.append("{ ").append(src).append(" return \"success\"; }\n");
     }
 
+    @Data
     public static class Config {
         private Map<String, String> alias;
         private Set<String> disable;
-
-        public Map<String, String> getAlias() {
-            return alias;
-        }
-
-        public void setAlias(Map<String, String> alias) {
-            this.alias = alias;
-        }
-
-        public Set<String> getDisable() {
-            return disable;
-        }
-
-        public void setDisable(Set<String> disable) {
-            this.disable = disable;
-        }
     }
 
     public static void main(String[] args) {

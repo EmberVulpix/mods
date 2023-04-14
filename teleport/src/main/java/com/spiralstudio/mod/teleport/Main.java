@@ -1,7 +1,13 @@
 package com.spiralstudio.mod.teleport;
 
+import com.spiralstudio.mod.core.ClassPool;
 import com.spiralstudio.mod.core.Commands;
+import com.spiralstudio.mod.core.Configs;
+import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
+import lombok.Data;
+
+import java.util.Map;
 
 /**
  * Enter commands to go somewhere.
@@ -47,28 +53,23 @@ public class Main {
                 "Class.forName(\"com.threerings.opengl.gui.e.a\")\n" +
                 "    .getDeclaredMethod(\"postAction\", new Class[]{com.threerings.opengl.gui.q.class, java.lang.String.class})\n" +
                 "    .invoke(null, new Object[]{rr__, \"readyroom\"});");
-
-        // Go to Town Square
-        Commands.addCommand("townsquare|ts", doScene("1"));
-        // Go to Bazaar
-        Commands.addCommand("bazaar|ba", doScene("2"));
-        // Go to Garrison
-        Commands.addCommand("garrison|ga", doScene("445"));
-        // Go to Arcade
-        Commands.addCommand("arcade|ar", doScene("3"));
-
-        // Go to FSC
-        Commands.addCommand("fsc|vana", doMission("king_of_ashes"));
-        // Go to Jelly King
-        Commands.addCommand("jk|rjp", doMission("sovereign_slime"));
-        // Go to Built to Destroy
-        Commands.addCommand("imf|twins", doMission("built_to_destroy"));
-        // Go to DaN
-        Commands.addCommand("dan", doMission("dreams_and_nightmares"));
-        // Go to Axes of Evil
-        Commands.addCommand("aoe", doMission("axes_of_evil"));
-        // Go to Shadowplay
-        Commands.addCommand("sp", doMission("shadowplay"));
+        try {
+            // Read custom configuration
+            Config config = Configs.readYaml("teleport.yml", Config.class);
+            if (config != null && config.getScene() != null) {
+                for (Map.Entry<String, String> entry : config.getScene().entrySet()) {
+                    Commands.addCommand(entry.getValue(), doScene(entry.getKey()));
+                }
+            }
+            if (config != null && config.getMission() != null) {
+                for (Map.Entry<String, String> entry : config.getMission().entrySet()) {
+                    Commands.addCommand(entry.getValue(), doMission(entry.getKey()));
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("[Teleport] Failed to read config");
+            e.printStackTrace();
+        }
     }
 
     static String doMission(String name) {
@@ -95,6 +96,19 @@ public class Main {
     static String doZone(String zoneId, String sceneId) {
         return "com.threerings.projectx.util.A ctx___ = (com.threerings.projectx.util.A) this._ctx;\n" +
                 "ctx___.xd().ad(" + zoneId + ", " + sceneId + ");\n";
+    }
+
+    static void printAllMissions() {
+        ClassPool.from("com.threerings.projectx.mission.client.MissionPanel")
+                .modifyMethod(new MethodModifier()
+                        .methodName("actionPerformed")
+                        .insertBefore("System.out.println(this.aNB);"));
+    }
+
+    @Data
+    public static class Config {
+        private Map<String, String> scene;
+        private Map<String, String> mission;
     }
 
     public static void main(String[] args) {

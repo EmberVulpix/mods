@@ -7,6 +7,7 @@ import com.spiralstudio.mod.core.ConstructorModifier;
 import com.spiralstudio.mod.core.FieldBuilder;
 import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
+import lombok.Data;
 
 import java.lang.reflect.Modifier;
 
@@ -88,28 +89,14 @@ public class Main {
         }
     }
 
+    @Data
     public static class Config {
         private Autoadv autoadv;
+    }
 
-        public Autoadv getAutoadv() {
-            return autoadv;
-        }
-
-        public void setAutoadv(Autoadv autoadv) {
-            this.autoadv = autoadv;
-        }
-
-        public static class Autoadv {
-            private boolean enabled;
-
-            public boolean isEnabled() {
-                return enabled;
-            }
-
-            public void setEnabled(boolean enabled) {
-                this.enabled = enabled;
-            }
-        }
+    @Data
+    public static class Autoadv {
+        private boolean enabled;
     }
 
     public static void main(String[] args) {

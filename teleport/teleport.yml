@@ -1,0 +1,83 @@
+scene:
+  # scene code -> cmd
+  1: townsquare|ts
+  2: bazaar|ba
+  3: arcade|ar
+  445: garrison|ga
+mission:
+  # mission code -> cmd
+  king_of_ashes: fsc|vana
+  sovereign_slime: jk|rjp
+  built_to_destroy: imf|twins
+  dreams_and_nightmares: dan
+  axes_of_evil: aoe
+  shadowplay: sp
+  shadow_beast: sb
+
+  # All mission codes
+
+  # abandoned_depot (RANK 1-1)
+  # ancient_generator (RANK 1-2)
+  # crossing_chasm (RANK 1-2)
+  # crossing_chasm_b (RANK 1-4)
+
+  # pumping_up (RANK 2-1)
+  # mission_sprite_1 (RANK 2-2)
+  # mission_sprite_2 (RANK 2-2)
+  # mission_sprite_3 (RANK 2-2)
+  # the_collector (RANK 2-3)
+
+  # alien_ooze (RANK 3-1)
+  # toy_soldiers (RANK 3-1)
+  # faith_armor (RANK 3-2)
+  # strength_unity (RANK 3-2)
+  # blades_fallen (RANK 3-2)
+  # shadow_beast (RANK 3-2)
+
+  # hall_of_heroes_1 (RANK 4-1)
+  # new_threat (RANK 4-2)
+  # oilers_in_boilers (RANK 4-2)
+  # frostifur_fandango (RANK 4-2)
+  # rescues_and_recycling (RANK 4-3)
+  # shocking_sentient_sentries (RANK 4-3)
+
+  # chilled_to_bone (RANK 5-1)
+  # work_idle_hands (RANK 5-1)
+  # time_enough_at_last (RANK 5-2)
+  # rise_or_fall (RANK 5-2)
+  # hall_of_heroes_2 (RANK 5-2)
+  # sovereign_slime (RANK 5-2)
+
+  # axes_of_evil (RANK 6-1)
+  # plan_of_attack (RANK 6-1)
+  # high_temperature_hostages (RANK 6-1)
+  # whipping_mishandling (RANK 6-2)
+  # sewer_stash (RANK 6-2)
+  # built_to_destroy (RANK 6-2)
+  # hall_of_heroes_3 (RANK 6-2)
+
+  # in_cold_blood (RANK 7-2)
+  # vicious_viscous (RANK 7-2)
+  # beyond_axes_of_evil (RANK 7-3)
+  # spark_roar (RANK 7-3)
+
+  # return_of_ur (RANK 8-1)
+  # weight_of_darkness (RANK 8-1)
+  # vile_engine (RANK 8-2)
+  # rotting_metropolis (RANK 8-2)
+  # great_escape (RANK 8-2)
+  # hall_of_heroes_4 (RANK 8-2)
+
+  # occurance_at_owlite_keep (RANK 9-1)
+  # silent_legion (RANK 9-1)
+  # terminal_meltdown (RANK 9-2)
+  # alone_in_dark (RANK 9-2)
+  # the_gauntlet (RANK 9-2)
+  # king_of_ashes (RANK 9-3)
+  # hall_of_heroes_5 (RANK 9-4)
+
+  # breaking_in_recruits (RANK 10-1)
+  # crimson_chaos (RANK 10-1)
+  # from_below (RANK 10-1)
+  # shadowplay (RANK 10-2)
+  # dreams_and_nightmares (RANK 10-2)

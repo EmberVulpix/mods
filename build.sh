@@ -9,5 +9,6 @@ rm -rf ./target/code-mods/*.jar
 for i in $mods;
 do
 cp ./$i/target/*.jar ./target/code-mods/
+cp ./$i/*.yml ./target/code-mods/
 done
 

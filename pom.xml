@@ -68,8 +68,9 @@
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <javassist.version>3.29.2-GA</javassist.version>
         <bytebuddy.version>1.12.21</bytebuddy.version>
-        <snakeyaml.version>1.33</snakeyaml.version>
+        <snakeyaml.version>2.0</snakeyaml.version>
         <core.version>1.0.0</core.version>
+        <lombok.version>1.18.26</lombok.version>
     </properties>
 
     <dependencyManagement>
@@ -93,6 +94,11 @@
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
                 <version>${snakeyaml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.spiralstudio.mod</groupId>

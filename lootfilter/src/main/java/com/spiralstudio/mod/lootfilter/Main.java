@@ -6,6 +6,7 @@ import com.spiralstudio.mod.core.FieldBuilder;
 import com.spiralstudio.mod.core.MethodBuilder;
 import com.spiralstudio.mod.core.MethodModifier;
 import com.spiralstudio.mod.core.Registers;
+import lombok.Data;
 
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -39,12 +40,12 @@ public class Main {
         redefineMessageEvent();
     }
 
-    static boolean addLootFilterClass(Config config) throws Exception {
+    static boolean addLootFilterClass(Config config) {
         if (config == null) {
             return false;
         }
-        Config.Pickup pickup = config.getPickup();
-        Config.Message message = config.getMessage();
+        Pickup pickup = config.getPickup();
+        Message message = config.getMessage();
         if (pickup == null && message == null) {
             return false;
         }
@@ -239,88 +240,28 @@ public class Main {
                                 "}"));
     }
 
+    @Data
     public static class Config {
         private Pickup pickup;
         private Message message;
+    }
 
-        public Pickup getPickup() {
-            return pickup;
-        }
+    @Data
+    public static class Pickup {
+        private Filter type;
+        private Filter name;
+    }
 
-        public void setPickup(Pickup pickup) {
-            this.pickup = pickup;
-        }
+    @Data
+    public static class Message {
+        private Filter type;
+        private Filter name;
+    }
 
-        public Message getMessage() {
-            return message;
-        }
-
-        public void setMessage(Message message) {
-            this.message = message;
-        }
-
-        public static class Pickup {
-            private Filter type;
-            private Filter name;
-
-            public Filter getType() {
-                return type;
-            }
-
-            public void setType(Filter type) {
-                this.type = type;
-            }
-
-            public Filter getName() {
-                return name;
-            }
-
-            public void setName(Filter name) {
-                this.name = name;
-            }
-        }
-
-        public static class Message {
-            private Filter type;
-            private Filter name;
-
-            public Filter getType() {
-                return type;
-            }
-
-            public void setType(Filter type) {
-                this.type = type;
-            }
-
-            public Filter getName() {
-                return name;
-            }
-
-            public void setName(Filter name) {
-                this.name = name;
-            }
-        }
-
-        public static class Filter {
-            private Set<String> excluded;
-            private Set<String> included;
-
-            public Set<String> getExcluded() {
-                return excluded;
-            }
-
-            public void setExcluded(Set<String> excluded) {
-                this.excluded = excluded;
-            }
-
-            public Set<String> getIncluded() {
-                return included;
-            }
-
-            public void setIncluded(Set<String> included) {
-                this.included = included;
-            }
-        }
+    @Data
+    public static class Filter {
+        private Set<String> excluded;
+        private Set<String> included;
     }
 
     public static void main(String[] args) {
