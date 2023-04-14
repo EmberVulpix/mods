@@ -7,8 +7,8 @@ import javassist.LoaderClassPath;
 import javassist.NotFoundException;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
 import java.util.function.Consumer;
 
 /**
@@ -21,14 +21,14 @@ public class ClassBuilder {
     private ClassPool classPool;
     private String className;
     private String superClassName;
-    private List<String> interfaceClassNames;
-    private List<ConstructorBuilder> constructorBuilders;
-    private List<ConstructorModifier> constructorModifiers;
+    private Collection<String> interfaceClassNames;
+    private Collection<ConstructorBuilder> constructorBuilders;
+    private Collection<ConstructorModifier> constructorModifiers;
     private StaticConstructorBuilder staticConstructor;
-    private List<FieldBuilder> fieldBuilders;
-    private List<FieldModifier> fieldModifiers;
-    private List<MethodBuilder> methodBuilders;
-    private List<MethodModifier> methodModifiers;
+    private Collection<FieldBuilder> fieldBuilders;
+    private Collection<FieldModifier> fieldModifiers;
+    private Collection<MethodBuilder> methodBuilders;
+    private Collection<MethodModifier> methodModifiers;
     private Consumer<Class<?>> actionOnComplete;
     private Class<?> clazz;
 
@@ -71,7 +71,7 @@ public class ClassBuilder {
         return this;
     }
 
-    public ClassBuilder interfaceClassNames(List<String> interfaceClassNames) {
+    public ClassBuilder interfaceClassNames(Collection<String> interfaceClassNames) {
         if (this.interfaceClassNames == null) {
             this.interfaceClassNames = new ArrayList<>();
         }
@@ -87,7 +87,7 @@ public class ClassBuilder {
         return this;
     }
 
-    public ClassBuilder addConstructors(List<ConstructorBuilder> builders) {
+    public ClassBuilder addConstructors(Collection<ConstructorBuilder> builders) {
         if (constructorBuilders == null) {
             constructorBuilders = new ArrayList<>();
         }
@@ -103,7 +103,7 @@ public class ClassBuilder {
         return this;
     }
 
-    public ClassBuilder modifyConstructors(List<ConstructorModifier> modifiers) {
+    public ClassBuilder modifyConstructors(Collection<ConstructorModifier> modifiers) {
         if (constructorModifiers == null) {
             constructorModifiers = new ArrayList<>();
         }
@@ -124,7 +124,7 @@ public class ClassBuilder {
         return this;
     }
 
-    public ClassBuilder addFields(List<FieldBuilder> builders) {
+    public ClassBuilder addFields(Collection<FieldBuilder> builders) {
         if (fieldBuilders == null) {
             fieldBuilders = new ArrayList<>();
         }
@@ -140,7 +140,7 @@ public class ClassBuilder {
         return this;
     }
 
-    public ClassBuilder modifyFields(List<FieldModifier> modifiers) {
+    public ClassBuilder modifyFields(Collection<FieldModifier> modifiers) {
         if (fieldModifiers == null) {
             fieldModifiers = new ArrayList<>();
         }
@@ -156,7 +156,7 @@ public class ClassBuilder {
         return this;
     }
 
-    public ClassBuilder addMethods(List<MethodBuilder> builders) {
+    public ClassBuilder addMethods(Collection<MethodBuilder> builders) {
         if (methodBuilders == null) {
             methodBuilders = new ArrayList<>();
         }
@@ -172,7 +172,7 @@ public class ClassBuilder {
         return this;
     }
 
-    public ClassBuilder modifyMethods(List<MethodModifier> modifiers) {
+    public ClassBuilder modifyMethods(Collection<MethodModifier> modifiers) {
         if (methodModifiers == null) {
             methodModifiers = new ArrayList<>();
         }

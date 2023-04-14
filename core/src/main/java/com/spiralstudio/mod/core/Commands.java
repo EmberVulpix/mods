@@ -9,7 +9,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Enter "/xhelp" to learn more about each command.
@@ -73,10 +72,7 @@ public final class Commands {
         // Override class `com.threerings.crowd.chat.client.ChatDirector`
         ClassPool.from("com.threerings.crowd.chat.client.a")
                 // Add custom fields
-                .addFields(fields.entrySet()
-                        .stream()
-                        .map(Map.Entry::getValue)
-                        .collect(Collectors.toList()))
+                .addFields(fields.values())
                 // Add custom commands, override method `com.threerings.crowd.chat.client.ChatDirector.requestChat`
                 .modifyMethod(new MethodModifier()
                         .methodName("a")
