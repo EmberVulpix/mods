@@ -111,7 +111,7 @@ public class ClassBuilder {
         return this;
     }
 
-    public ClassBuilder staticConstructor(StaticConstructorBuilder builder) {
+    public ClassBuilder setStaticConstructor(StaticConstructorBuilder builder) {
         staticConstructor = builder;
         return this;
     }

@@ -1,0 +1,9 @@
+{
+  "mod": {
+    "name": "Demo",
+    "description": "What",
+    "author": "Who",
+    "version": "1.0.0",
+    "compatibility": "Yes"
+  }
+}

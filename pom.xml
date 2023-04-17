@@ -51,6 +51,7 @@
         <module>gearex</module>
         <module>uienhancer</module>
         <module>tweaks</module>
+        <module>demo</module>
         <module>test</module>
     </modules>
 
