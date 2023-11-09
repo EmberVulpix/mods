@@ -1,0 +1,9 @@
+{
+  "mod": {
+    "name": "Auto Conversation",
+    "description": "Auto click the response buttons.",
+    "author": "Leego",
+    "version": "1.0.0",
+    "compatibility": "Yes"
+  }
+}

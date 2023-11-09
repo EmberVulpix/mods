@@ -45,6 +45,7 @@
         <module>teleport</module>
         <module>camera</module>
         <module>autoadvance</module>
+        <module>autoconversation</module>
         <module>noloading</module>
         <module>nonews</module>
         <module>lootfilter</module>
