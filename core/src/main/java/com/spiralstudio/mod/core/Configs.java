@@ -36,6 +36,18 @@ public final class Configs {
         }
     }
 
+    public static Config readRemote(String url, Map<String, String> headers) throws IOException {
+        String res = HttpUtils.get(url, headers);
+        if (res == null || res.isEmpty()) {
+            return null;
+        }
+        Config config = JsonUtils.parse(res, Config.class);
+        if (config == null) {
+            throw new IOException("Failed to parse config");
+        }
+        return config;
+    }
+
     public static File getConfigFile(String filename) {
         File file = new File(DIR + "/code-mods/" + filename);
         if (!file.exists()) {

@@ -12,30 +12,26 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>core</artifactId>
+    <artifactId>hidename</artifactId>
     <version>1.0.0</version>
-    <name>Core</name>
+    <name>HideName</name>
 
     <properties>
-        <mainClass>com.spiralstudio.mod.core.Core</mainClass>
+        <mainClass>com.spiralstudio.mod.hidename.Main</mainClass>
     </properties>
 
     <dependencies>
         <dependency>
+            <groupId>com.spiralstudio.mod</groupId>
+            <artifactId>core</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.yaml</groupId>
-            <artifactId>snakeyaml</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

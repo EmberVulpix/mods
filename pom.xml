@@ -54,6 +54,7 @@
         <module>tweaks</module>
         <module>simplifiedchinese</module>
         <module>traditionalchinese</module>
+        <module>hidename</module>
         <module>demo</module>
         <module>test</module>
     </modules>
@@ -73,6 +74,7 @@
         <javassist.version>3.29.2-GA</javassist.version>
         <bytebuddy.version>1.12.21</bytebuddy.version>
         <snakeyaml.version>2.0</snakeyaml.version>
+        <jackson.version>2.14.2</jackson.version>
         <core.version>1.0.0</core.version>
         <lombok.version>1.18.26</lombok.version>
     </properties>
@@ -98,6 +100,11 @@
                 <groupId>org.yaml</groupId>
                 <artifactId>snakeyaml</artifactId>
                 <version>${snakeyaml.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.projectlombok</groupId>
