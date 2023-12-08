@@ -10,6 +10,10 @@ import java.io.IOException;
 public final class FileUtils {
 
     public static void write(String filename, String content) throws IOException {
+        write(filename, content, false);
+    }
+
+    public static void write(String filename, String content, boolean append) throws IOException {
         File file = new File(filename);
         File dir = file.getParentFile();
         if (!dir.exists()) {
@@ -18,7 +22,7 @@ public final class FileUtils {
                 throw new IOException("Failed to create dir: " + dir.getAbsolutePath());
             }
         }
-        try (FileWriter writer = new FileWriter(file)) {
+        try (FileWriter writer = new FileWriter(file, append)) {
             writer.write(content);
             writer.flush();
         }

@@ -55,6 +55,7 @@
         <module>simplifiedchinese</module>
         <module>traditionalchinese</module>
         <module>hidename</module>
+        <module>bookkeeper</module>
         <module>demo</module>
         <module>test</module>
     </modules>

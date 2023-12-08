@@ -1,0 +1,2 @@
+endpoint: https://api.ball.one/balances
+filename: ./bookkeeper.txt
