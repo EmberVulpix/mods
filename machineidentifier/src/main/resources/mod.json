@@ -1,0 +1,9 @@
+{
+  "mod": {
+    "name": "Allow banned PCs to login to SK",
+    "description": "",
+    "author": "Leego",
+    "version": "1.0.0",
+    "compatibility": "Yes"
+  }
+}
